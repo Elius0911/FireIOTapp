@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'noti.dart';
-
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(const MyApp());
+}
+
+void alarmSensor() async {
+  var url = Uri.http('192.168.21.34', 'index.php', {'alarm': '1'});
+  var response = await http.get(url);
+  if (response.statusCode == 200) {
+    print('cc');
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -27,7 +35,7 @@ class WebViewApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: WebView(
-        initialUrl: 'https://flutter.dev',
+        initialUrl: 'http://192.168.21.34/index.php',
         javascriptMode: JavascriptMode.unrestricted,
       ),
     );
