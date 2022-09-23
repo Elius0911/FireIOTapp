@@ -31,10 +31,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  webview_flutter: ^3.0.4
+  webview_flutter: 3.0.4
   flutter_local_notifications: 9.7.0
-  flutter_background_service: 2.3.8
-  http: ^0.13.5
+  flutter_background_service: 2.3.5
+  http: 0.13.5
 
 
   # The following adds the Cupertino Icons font to your application.

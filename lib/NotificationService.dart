@@ -43,8 +43,8 @@ class NotificationService {
           importance: Importance.max,
           priority: Priority.max,
           icon: '@drawable/ic_notification',
-          //TODO: sound:,
           playSound: true,
+          //TODO: sound:,
         ),
       ),
     );

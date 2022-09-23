@@ -1,14 +1,12 @@
 import 'dart:async';
-import 'dart:io';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_background_service/flutter_background_service.dart';
 import 'package:flutter_background_service_android/flutter_background_service_android.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
-import 'main.dart';
+import 'json_and_Notification.dart';
 
-int periodTime = 1; //TODO: 週期時間
+int periodTime = 2; //TODO: 週期時間
 
 Future<void> initializeService() async {
   final service = FlutterBackgroundService();
@@ -48,7 +46,7 @@ void onStart(ServiceInstance service) async {
       service.setAsBackgroundService();
     });
   }
-  // bring to foreground
+  //週期執行
   Timer.periodic(Duration(seconds: periodTime), (timer) async {
     if (service is AndroidServiceInstance) {
       jsonDecode_and_alarm();
