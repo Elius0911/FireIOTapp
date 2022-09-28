@@ -6,7 +6,7 @@ import 'package:flutter_background_service/flutter_background_service.dart';
 
 import 'backgroundService.dart';
 
-String url = 'http://192.168.100.217/'; //TODO: IP
+String url = 'http://192.168.21.34/'; //TODO: IP, 192.168.100.217
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
