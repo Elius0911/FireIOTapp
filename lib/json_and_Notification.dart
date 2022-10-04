@@ -18,6 +18,7 @@ Future jsonDecode_and_alarm() async {
   String warningText_first; //第一次警告字樣
   String warningTextImport; //警告字樣匯入
 
+  //第一次警告字樣匯入
   if (firstTime == true) {
     final response = await http.get(Uri.parse(url + 'alarm.json'));
 
@@ -33,7 +34,6 @@ Future jsonDecode_and_alarm() async {
       //通知(ID, 標題, 內容)
       NotificationService().showNotification(1, "居家防災警報", warningText_first);
       firstTime = false;
-      print("first");
       warningText = warningText_first;
     }
   } else {
@@ -45,17 +45,13 @@ Future jsonDecode_and_alarm() async {
     } else {
       throw Exception('no data ;(');
     }
-    print(warningText + "1");
     if (value == 1) {
       warningTextImport = decode['warningText'];
 
       //若警告字樣不重複 則發出通知
       if (warningTextImport != warningText) {
         warningText = warningTextImport;
-        print(warningText + "2");
         NotificationService().showNotification(1, "居家防災警報", warningText);
-
-        print("not first");
       }
     }
   }
