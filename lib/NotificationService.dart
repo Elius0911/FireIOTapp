@@ -1,4 +1,8 @@
+//引用來源：https://github.com/Bytx-youtube/flutterlocalnotifications/blob/main/lib/notificationservice.dart
+//Elius簡化版：https://github.com/Elius0911/FireIOTapp/blob/main/lib/NotificationService.dart
+
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+
 
 class NotificationService {
   static final NotificationService _notificationService =
